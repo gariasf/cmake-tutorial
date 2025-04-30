@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\mrspe\Desktop\cmake\cmake-4.0.1-tutorial-source\Step6\MathFunctions\mysqrt.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\mrspe\Desktop\cmake\cmake-4.0.1-tutorial-source\Step6\MathFunctions\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BCE738F7-DD92-32E8-A5A8-9773B9D956D3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
