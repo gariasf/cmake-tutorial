@@ -1,6 +1,6 @@
 #include "mysqrt.h"
 
-// TODO 4: include cmath
+#include <cmath>
 #include <iostream>
 
 namespace mathfunctions {
@@ -12,25 +12,23 @@ double mysqrt(double x)
     return 0;
   }
 
-  // TODO 5: If both HAVE_LOG and HAVE_EXP are defined,  use the following:
-  //// double result = std::exp(std::log(x) * 0.5);
-  //// std::cout << "Computing sqrt of " << x << " to be " << result
-  ////        << " using log and exp" << std::endl;
-  // else, use the existing logic.
+  #if defined(HAVE_LOG) && defined(HAVE_EXP)
+    double result = std::exp(std::log(x) * 0.5);
+    std::cout << "Computing sqrt of " << x << " to be " << result
+              << " using log and exp" << std::endl;
+  #else
+    double result = x;
 
-  // Hint: Don't forget the #endif before returning the result!
-
-  double result = x;
-
-  // do ten iterations
-  for (int i = 0; i < 10; ++i) {
-    if (result <= 0) {
-      result = 0.1;
+    // do ten iterations
+    for (int i = 0; i < 10; ++i) {
+      if (result <= 0) {
+        result = 0.1;
+      }
+      double delta = x - (result * result);
+      result = result + 0.5 * delta / result;
+      std::cout << "Computing sqrt of " << x << " to be " << result << std::endl;
     }
-    double delta = x - (result * result);
-    result = result + 0.5 * delta / result;
-    std::cout << "Computing sqrt of " << x << " to be " << result << std::endl;
-  }
+  #endif
 
   return result;
 }
